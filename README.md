@@ -1,3 +1,5 @@
+#WP Clean Uploads
+
 This plugin is designed to clean out your uploads folder on WordPress.
 
 ### What exactly does it do?
