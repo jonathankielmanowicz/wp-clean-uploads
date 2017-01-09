@@ -3,9 +3,10 @@ jQuery(document).ready(function($) {
   var deleteSelected = $('#delete-selected ');
   var deleteAll = $('#delete-all');
 
+  var files = document.getElementsByClassName('to-delete-file-name');
+
   deleteSelected.click(function(){
 
-    var files = document.getElementsByClassName('to-delete-file-name');
     var filesToDelete = [];
 
     for(var i=0; i<files.length; i++) {
@@ -14,19 +15,17 @@ jQuery(document).ready(function($) {
       }
     }
 
-    console.log(filesToDelete);
-
     $.ajax({
       url: ajaxurl,
       type: 'POST',
       dataType: 'json',
       data: {
-        action: 'delete_selected',
+        action: 'delete_files',
         security: wpCleanUploads.security,
-        files: ''
+        files: filesToDelete
       },
       success: function(res) {
-        // location.reload();
+        location.reload();
         console.log(wpCleanUploads.success);
       },
       error: function(res) {
@@ -46,7 +45,7 @@ jQuery(document).ready(function($) {
         security: wpCleanUploads.security
       },
       success: function(res) {
-        // location.reload();
+        location.reload();
         console.log(wpCleanUploads.success);
       },
       error: function(res) {
