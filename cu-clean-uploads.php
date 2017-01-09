@@ -4,7 +4,7 @@
 * Description: Cleans out files from uploads directory that are not in your media library.
 * Author: Jonathan Kielmanowicz
 * Author URI: http://github.com/jonathankielmanowicz
-* Version: 0.0.1
+* Version: 1.0
 */
 
 if ( !defined('ABSPATH' ) ) {
