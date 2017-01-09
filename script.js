@@ -15,14 +15,31 @@ jQuery(document).ready(function($) {
       }
     }
 
-    $.ajax({
+    executeDeletion(filesToDelete);
+
+  });
+
+  deleteAll.click(function(){
+
+    var filesToDelete = [];
+
+    for(var i=0; i<files.length; i++) {
+      filesToDelete.push(files[i].nextSibling.nodeValue);
+    }
+
+    executeDeletion(filesToDelete);
+
+  });
+
+  function executeDeletion(files) {
+        $.ajax({
       url: ajaxurl,
       type: 'POST',
       dataType: 'json',
       data: {
         action: 'delete_files',
         security: wpCleanUploads.security,
-        files: filesToDelete
+        files: files
       },
       success: function(res) {
         location.reload();
@@ -32,26 +49,6 @@ jQuery(document).ready(function($) {
         console.log(wpCleanUploads.error);
       }
     });
-
-  });
-
-  deleteAll.click(function(){
-    $.ajax({
-      url: ajaxurl,
-      type: 'POST',
-      dataType: 'json',
-      data: {
-        action: 'delete_all',
-        security: wpCleanUploads.security
-      },
-      success: function(res) {
-        location.reload();
-        console.log(wpCleanUploads.success);
-      },
-      error: function(res) {
-        console.log(wpCleanUploads.error);
-      }
-    });
-  });
+  }
 
 });
