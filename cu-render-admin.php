@@ -1,11 +1,4 @@
 <?php
-/*
-* Plugin Name: Clean Uploads
-* Description: Cleans out images from uploads directory that are not in your media library.
-* Author: Jonathan Kielmanowicz
-* Author URI: http://github.com/jonathankielmanowicz
-* Version: 0.0.1
-*/
 
 function cu_clean_media_html()
 {
@@ -13,7 +6,7 @@ function cu_clean_media_html()
     if (!current_user_can('manage_options')) {
         return;
     }
-    require plugin_dir_path(__FILE__) . 'cu-menu.php';
+    require plugin_dir_path(__FILE__) . 'cu-menu-display.php';
 }
 
 function cu_clean_media() {
@@ -23,3 +16,5 @@ function cu_clean_media() {
 }
 
 add_action( 'admin_menu', 'cu_clean_media' );
+
+?>

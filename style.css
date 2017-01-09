@@ -1,0 +1,59 @@
+.cu-wrapper {
+  width: 100%;
+}
+
+.title {
+  font-size: 2em;
+}
+
+.files-to-delete {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.to-delete-files-container {
+  padding-left: 2em;
+}
+
+.confirm-delete-btn {
+  width: 14em;
+  padding: 1em 0em;
+  font-size: 1.2em;
+  font-family: "Helvetica Neue";
+  text-align: center;
+  border: 1px solid;
+  letter-spacing: 1px;
+  color: #000;
+  text-decoration: none;
+}
+
+.confirm-delete-btn:hover {
+  cursor: pointer;
+}
+
+#delete-selected {
+  background-color: #4080bf;
+  border-color: #79a6d2;
+}
+
+#delete-selected:hover {
+  color: #282B2D;
+  background-color: #6699cc;
+  border-color: #4080bf;
+}
+
+form[name="to-delete-form"] {
+  padding-bottom: .5em;
+}
+
+#delete-all {
+  background-color: #f26767;
+  border-color: #f26767;
+}
+
+#delete-all:hover {
+  color: #282B2D;
+  background-color: #f58888;
+  border-color: #f15d5d;
+}
+
