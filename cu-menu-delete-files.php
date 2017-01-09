@@ -1,5 +1,9 @@
 <?php
 
+/*
+* $dirPath - path to the uploads folder
+* $deleteArray - array of file names to delete
+*/
 function cu_clean_media_execute_all($dirPath,$deleteArray) {
 
   for($i=0; $i<sizeof($deleteArray); $i++) {
